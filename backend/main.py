@@ -1,11 +1,16 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/', methods=['POST'])
 def home():
+     # Get the JSON data from the request
+     data = request.json
+     msgtxt = data.get('msgtxt','') # Extract msgtxt, default to empt string if not present 
+
+     #Process the msgtxt or respond accordingly
      resp = {
-          'gusReply': 'hi there buddy'
+          'gusReply': f'You said: {msgtxt}'
      }
 
      return jsonify(resp)
