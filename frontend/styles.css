@@ -3,16 +3,18 @@ body {
     font-family: Arial, sans-serif;
     background-color: #1a002b;
     color: white;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
 }
 
 #chat-container {
+    flex: 1;
     padding: 20px;
-    height: calc(100vh - 80px);
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    overflow: auto;
-
 }
 
 .bubble {
@@ -38,7 +40,9 @@ body {
     background-color: #2b003d;
     position: fixed;
     bottom: 0;
-    width: 100%;        
+    width: 100%;   
+    box-sizing: border-box;
+    height: 60px;     
 }
 
 #message-box {
