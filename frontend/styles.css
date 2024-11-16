@@ -11,10 +11,12 @@ body {
 #chat-container {
     flex: 1;
     padding: 20px;
+    height: calc(100vh - 80px);
     overflow-y: auto;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    gap: 10px;
 }
 
 .bubble {
@@ -22,6 +24,7 @@ body {
     padding: 10px;
     border-radius: 10px;
     margin: 5px 10px;
+    word-wrap: break-word;
 }
 
 .left {
@@ -42,7 +45,7 @@ body {
     bottom: 0;
     width: 100%;   
     box-sizing: border-box;
-    height: 60px;     
+    gap: 10px;
 }
 
 #message-box {
@@ -51,6 +54,7 @@ body {
     border: none;
     border-radius: 5px;
     margin-right: 10px;
+    box-sizing: border-box;
 }
 
 #send-button {
@@ -60,6 +64,7 @@ body {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    flex-shrink: 0;
 }
 
 #send-button:hover {
