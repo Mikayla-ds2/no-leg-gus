@@ -1,6 +1,8 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 
+import random
+
 app = Flask(__name__)
 CORS(app)
 
@@ -10,9 +12,17 @@ def home():
      data = request.json
      msgtxt = data.get('msgtxt','') # Extract msgtxt, default to empt string if not present 
 
+     possibleReplies = [
+          'i hate you',
+          'i love you',
+          'where are my legs',
+          'no really please tell me where my legs are'
+     ]
+
      #Process the msgtxt or respond accordingly
      resp = {
-          'gusReply': f'You said: {msgtxt}'
+          #'gusReply': f'Hello: {msgtxt}'
+          'gusReply': random.choice(possibleReplies)
      }
 
      return jsonify(resp)
