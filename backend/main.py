@@ -15,7 +15,7 @@ def home():
      reply = ''
      
      if 'earth' in msgtxt:
-          reply = 'i love earth!'
+          reply = 'Earth has a '
           
      if 'hi' in msgtxt:
           reply = "Hello!"
