@@ -45,4 +45,10 @@ msgbox.addEventListener('keydown', (event) => {
         document.getElementById('send-button'),click(); // Simulate a click on the send button
  
     }
+    document.getElementById('userInput').addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
+            event.preventDefault(); // Prevent the default action (like form submission)
+            document.getElementById('send-button').click(); // Simulate a click on the send button
+        }
+    });
 });
