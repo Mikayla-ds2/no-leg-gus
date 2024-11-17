@@ -73,3 +73,4 @@ def akinator_planet_style():
             elif response == 'no':
                 remaining_planets.remove('Neptune', 'Uranus')
                 return remaining_planets
+akinator_planet_style()
