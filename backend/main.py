@@ -41,3 +41,12 @@ def home():
 if __name__ == '__main__':
      app.run(debug=True)
      
+     
+     
+     
+     
+     '''
+     marketed as a educational tool to teach about the planets. 
+     add the ai.py file here, and play around with the fact that it is linked
+     to the javascript file and therefore frontend. 
+     '''
