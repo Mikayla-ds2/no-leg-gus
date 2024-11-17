@@ -10,6 +10,9 @@ document.getElementById('send-button').addEventListener('click',() => {
     let msgtxt = msgbox.value
 
     console.log(msgtxt)
+let chat= document.getElementById("chat-container")
+chat.innerHTML = chat.innerHTML+`<div class="bubble right">${msgtxt}</div>`
+
     fetch('http://127.0.0.1:5000', {
         method: 'POST', 
         headers: {
@@ -19,14 +22,14 @@ document.getElementById('send-button').addEventListener('click',() => {
     })
     .then(response => {
         if (!response.ok) {
-            throw new Error('HTTP error! Status: $(response.status}');
+            throw new Error('HTTP error! Status: ' + response.status);
         }
         return response.json();
     })
     .then(data => {
         console.log('Message sent successfully:', data);
         let chat= document.getElementById("chat-container")
-        chat.innerHTML = chat.innerHTML+`<div class="bubble right">${data.gusReply}</div>`
+        chat.innerHTML = chat.innerHTML+`<div class="bubble left">${data.gusReply}</div>`
 
         msgbox.value = '';
     })
