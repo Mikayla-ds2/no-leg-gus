@@ -15,6 +15,5 @@ d = {
 }
 
 
-
 # if temp < 0:
     # loop through dictionary list[0] and adds planet name to potential planet list
