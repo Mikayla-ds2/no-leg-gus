@@ -12,19 +12,19 @@ def home():
      data = request.json
      msgtxt = data.get('msgtxt','') # Extract msgtxt, default to empt string if not present 
 
-     possibleReplies = [
-          'i hate you',
-          'i love you',
-          'where are my legs',
-          'no really please tell me where my legs are'
-     ]
+     reply = ''
+     
+     if 'earth' in msgtxt:
+          reply = 'i love earth!'
+          
+     if 'hi' in msgtxt:
+          reply = "Hello!"
 
      #Process the msgtxt or respond accordingly
      resp = {
           #'gusReply': f'Hello: {msgtxt}'
-          'gusReply': random.choice(possibleReplies)
+          'gusReply': reply
      }
-
      return jsonify(resp)
 
 if __name__ == '__main__':
